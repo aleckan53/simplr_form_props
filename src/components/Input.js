@@ -1,12 +1,14 @@
 import React from 'react';
+import useInput from 'hooks/useInput';
 
-const Input = ({ label, children, id, invalidMsg, ...inputProps }) => {
+const Input = ({ checkValid, type = 'text', name, children }) => {
+  const { value, valid, onChange, invalidMsg } = useInput(type, checkValid)
 
   return <>
-    {label && <label htmlFor={id}>{label}</label>}
-    <input {...inputProps}/>
+    {name && <label htmlFor={name}>{name}</label>}
+    <input className='input' type={type} onChange={onChange} data-valid={valid}/>
     {/* Displays validation msg only with text inputs */}
-    {!inputProps['data-valid'] && inputProps.type !== 'checkbox' ? <div className='invalidMsg'><p>{invalidMsg}</p></div> : ''}
+    {!valid && type !== 'checkbox' ? <div className='invalidMsg'><p>{invalidMsg}</p></div> : ''}
     {children}
   </>
 }

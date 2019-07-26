@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import validate from 'utils/inputValidation';
 
-const useInput = (label, id, type = 'text') => {
+const useInput = (type = 'text', checkValid) => {
   
   const [value, setValue] = useState(null);
   const [valid, setValid] = useState(null);
@@ -11,18 +11,20 @@ const useInput = (label, id, type = 'text') => {
 
   // effect reacts when input's value changes
   useEffect(() => {
-    const { isValid, msg } = type === 'checkbox' ? {isValid: value, msg: ''} : validate[id](value);
+    if(checkValid) {
+      const { isValid, msg } = type === 'checkbox' ? {isValid: value, msg: ''} : validate[checkValid](value);
 
-    clearTimeout(timer);
+      clearTimeout(timer);
 
-    if(value) {
-      setTimer(setTimeout(() => {
-        setValid(isValid);
-        setInvalidMsg(msg);
-      }, 700));
-    } else {
-      setValid(null);
-      setInvalidMsg(null);
+      if(value) {
+        setTimer(setTimeout(() => {
+          setValid(isValid);
+          setInvalidMsg(msg);
+        }, 700));
+      } else {
+        setValid(null);
+        setInvalidMsg(null);
+      }
     }
 
   }, [value]);
@@ -37,14 +39,9 @@ const useInput = (label, id, type = 'text') => {
   }
 
   return {
-    label,
-    type,
-    onChange,
     value,
     valid,
-    id,
-    'data-valid': valid,
-    className: `input ${type} ${id}`,
+    onChange,
     invalidMsg,
   }
 }
