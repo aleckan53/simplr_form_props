@@ -13,6 +13,7 @@ export default {
   userName(str) {
     // 4-20 lower or upper case, or numbers
     const regex = /^[a-zA-Z0-9]{4,20}$/;
+    return regex.test(str)
   },
   password(str) {
     // at least 1 digit, 1 lowerCase, 1 upperCase
