@@ -35,6 +35,7 @@ const useInput = (label, id, type = 'text') => {
     valid,
     id,
     'data-valid': valid,
+    className: `input ${type} ${id}`
   }
 }
 
