@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Input = ({label}) => {
+const Input = ({label, type}) => {
 
   return <>
-    {label && <label></label>}
-    <input/>
+    {label && <label>{label}</label>}
+    <input type={type}/>
   </>
 }
 
