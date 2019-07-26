@@ -31,7 +31,7 @@ const Form = () => {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form className='form' onSubmit={onSubmit}>
       <fieldset>
       <legend>LET'S GET STARTED</legend>
         <Input {...businessNameHandler}/>

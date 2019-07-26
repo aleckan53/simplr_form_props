@@ -3,8 +3,10 @@
 /* colors */
 $mainColor: #44b1df;
 $labelColor: #2b2b2b;
-$hintColor: #6f6f6f;
+$lightGray: #6f6f6f;
 $linkColor: #376ba1;
+$inputBorder: rgb(195, 195, 195);
+$inputBg: rgb(242, 242, 242);
 
 * {
   margin: 0;
@@ -17,7 +19,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 1% 5%;
+  padding: 5%;
+  min-width: 320px;
 }
 
 code {
@@ -25,10 +28,9 @@ code {
     monospace;
 }
 
-form {
+.form {
   box-shadow: 0px 3px 5px 0px rgba(1, 1, 1, 0.2);
   padding: 5rem 10% 2rem;
-  margin: 2rem auto;
   background-image: url('https://www.simplr.ai/hubfs/Simplr-December2017/Image/logo.svg');
   background-repeat: no-repeat;
   background-size: 80px;
@@ -70,8 +72,12 @@ form {
   .input {
     border-style: solid;
     border-width: 1px;
-    border-color: rgb(195, 195, 195);
-    background-color: rgb(242, 242, 242);
+    border-color: $inputBorder;
+    background-color: $inputBg;
+
+    &[data-valid='false']:not(.checkbox) {
+      border: 1px solid red;
+    }
 
     &.checkbox {
       width: auto;
@@ -81,13 +87,20 @@ form {
       height: 1em;
 
       &:checked {
-        background: red;
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0.181in" height="0.139in"%3E%3Cpath fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M13.000,1.249 L11.419,-0.002 L5.180,7.255 L1.284,4.257 L0.001,5.790 L5.475,10.002 L13.000,1.249 Z"/%3E%3C/svg%3E');
+        background-color: #4b4b4b;
+        background-position: 2px 2px, 0 0;
+        background-repeat: no-repeat;
+        background-size: contain;
       }
+      
     }
   }
 
   select {
     border-radius: 0;
+    border-color: $inputBorder;
+    background-color: $inputBg;
     background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%236f6f6f%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
     background-repeat: no-repeat, repeat;
     background-position: right .7em top 50%, 0 0;
@@ -95,10 +108,11 @@ form {
 
   p {
     display: inline-block;
-    font-size: .7rem;
+    font-size: calc(10px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
     padding-left: .5rem ;
-    transform: translateY(-1.3rem);
-    color: $hintColor;
+    transform: translateY(-1.1rem);
+    color: $lightGray;
+    width: 90%;
 
     a {
       color: $linkColor;
@@ -107,7 +121,7 @@ form {
     }
   }
 
-  button {
+  .submit {
     width: 50%;
     height: 2.5rem;
     font-size: 1rem;
@@ -119,8 +133,13 @@ form {
     border: none;
     background: $mainColor;
     color: white;
+    
+    &:disabled {
+      background: $lightGray;
+      opacity: .8;
+      transition: .5s;
+    }
   }
-
 }
 
 
