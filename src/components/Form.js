@@ -13,8 +13,12 @@ const Form = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     console.log({
-      businessName
-    })
+      businessName,
+      email,
+      userName,
+      password,
+      website,
+    });
   }
 
   return (
