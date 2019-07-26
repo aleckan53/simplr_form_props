@@ -16,12 +16,21 @@ export default {
       msg: 'Please enter a valid username'
     };
   },
-  password(str) {
+  password(str='') {
     // at least 1 digit, 1 lowerCase, 1 upperCase
     const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    const length = /\w{6,}/;
+    const hasLowerCase = /[a-z]/;
+    const hasUpperCase= /[A-Z]/;
+
+    const hint = !length.test(str) ? 'six characters' 
+      : !hasUpperCase.test(str) ? 'one uppercase'
+      : !hasLowerCase.test(str) ? 'one lowercase'
+      : 'one digit'
+
     return {
       isValid: regex.test(str),
-      msg: 'Please should have six characters'
+      msg: `Password should have ${hint}`
     };
   },
 };

@@ -15,7 +15,7 @@ const useInput = (id, type = 'text') => {
   useEffect(() => {
     // handles validation
     if(id in validate) {
-      const { isValid, msg } = validate[id](value);
+      const { isValid, msg } = validate[id](value || '');
 
       clearTimeout(delay);
       // if validation passed, setValid with no delay
