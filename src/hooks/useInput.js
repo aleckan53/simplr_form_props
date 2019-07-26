@@ -4,12 +4,12 @@ import validate from 'utils/inputValidation';
 
 const useInput = (label, type, id) => {
   
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState(null);
   const [valid, setValid] = useState(null);
 
-  // effect react on input value changes
+  // effect reacts when input's value changes
   useEffect(() => {
-    const isValid = validate[id](value);
+    const isValid = type === 'checkbox' ? value : validate[id](value);
 
     if (isValid && value) {
       setValid(true);
@@ -19,8 +19,12 @@ const useInput = (label, type, id) => {
   }, [value]);
 
   const onChange = e => {
-    e.preventDefault();
-    setValue(e.target.value);
+    // handle checkbox and text inputs differently
+    if(type === 'checkbox') {
+      setValue(!value)
+    } else {
+      setValue(e.target.value);
+    }
   }
 
   return {
