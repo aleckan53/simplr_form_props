@@ -6,18 +6,25 @@ const useInput = (label, id, type = 'text') => {
   
   const [value, setValue] = useState(null);
   const [valid, setValid] = useState(null);
+  const [timer, setTimer] = useState(null);
   const [invalidMsg, setInvalidMsg] = useState(null);
 
   // effect reacts when input's value changes
   useEffect(() => {
     const { isValid, msg } = type === 'checkbox' ? {isValid: value, msg: ''} : validate[id](value);
 
-    if (isValid && value) {
-      setValid(true);
+    clearTimeout(timer);
+
+    if(value) {
+      setTimer(setTimeout(() => {
+        setValid(isValid);
+        setInvalidMsg(msg);
+      }, 700));
     } else {
-      setValid(false);
-      setInvalidMsg(msg);
+      setValid(null);
+      setInvalidMsg(null);
     }
+
   }, [value]);
 
   const onChange = e => {
