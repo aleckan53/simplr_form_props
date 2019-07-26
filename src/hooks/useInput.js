@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import validate from 'utils/inputValidation';
 
-const useInput = (label, type, id) => {
+const useInput = (label, id, type = 'text') => {
   
   const [value, setValue] = useState(null);
   const [valid, setValid] = useState(null);
