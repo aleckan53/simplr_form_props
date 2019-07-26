@@ -6,15 +6,17 @@ const useInput = (label, id, type = 'text') => {
   
   const [value, setValue] = useState(null);
   const [valid, setValid] = useState(null);
+  const [invalidMsg, setInvalidMsg] = useState(null);
 
   // effect reacts when input's value changes
   useEffect(() => {
-    const isValid = type === 'checkbox' ? value : validate[id](value);
+    const { isValid, msg } = type === 'checkbox' ? {isValid: value, msg: ''} : validate[id](value);
 
     if (isValid && value) {
       setValid(true);
     } else {
       setValid(false);
+      setInvalidMsg(msg);
     }
   }, [value]);
 
@@ -35,7 +37,8 @@ const useInput = (label, id, type = 'text') => {
     valid,
     id,
     'data-valid': valid,
-    className: `input ${type} ${id}`
+    className: `input ${type} ${id}`,
+    invalidMsg,
   }
 }
 
