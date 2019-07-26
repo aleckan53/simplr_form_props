@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import validate from 'utils/inputValidation';
 
-const useInput = (type = 'text', checkValid) => {
+const useInput = (name, type = 'text') => {
   
   const [value, setValue] = useState(null);
   const [valid, setValid] = useState(null);
@@ -11,22 +11,27 @@ const useInput = (type = 'text', checkValid) => {
 
   // effect reacts when input's value changes
   useEffect(() => {
-    if(checkValid) {
-      const { isValid, msg } = type === 'checkbox' ? {isValid: value, msg: ''} : validate[checkValid](value);
+    if(name in validate) {
+      const { isValid, msg } = validate[name](value);
 
       clearTimeout(timer);
-
-      if(value) {
+      // if validation passed, setValid with no delay
+      if(isValid && value) {
+        setValid(isValid);
+      }
+      // if validation is failed, delay setValid while user typing
+      else if (!isValid && value) {
         setTimer(setTimeout(() => {
           setValid(isValid);
           setInvalidMsg(msg);
         }, 700));
-      } else {
+      }
+      // if value is empty, reset to null 
+      else {
         setValid(null);
         setInvalidMsg(null);
       }
     }
-
   }, [value]);
 
   const onChange = e => {
