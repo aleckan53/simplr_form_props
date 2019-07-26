@@ -4,7 +4,7 @@ const Input = ({ label, type, onChange, id, valid }) => {
 
   return <>
     {label && <label htmlFor={id}>{label}</label>}
-    <input type={type} onChange={onChange} id={id} data-valid={valid}/>
+    <input type={type} onChange={onChange || null} id={id} data-valid={valid}/>
   </>
 }
 

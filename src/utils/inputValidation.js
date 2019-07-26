@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 export default {
   businessName(str) {
     // 1-30 chars or numbers or special symbols

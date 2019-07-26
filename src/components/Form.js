@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from './Input';
+import Button from './Button';
 import useInput from 'hooks/useInput';
 
 const Form = () => {
@@ -29,6 +30,7 @@ const Form = () => {
       <Input {...passwordHandler}/>
       <Input {...webSiteHandler}/>
       <Input type='submit'/> */}
+      <Button name='Register' type='submit'/>
     </form>
   )
 }
