@@ -11,9 +11,14 @@ export default {
   username(str) {
     // 4-20 lower or upper case, or numbers
     const regex = /^[a-zA-Z0-9]{4,20}$/;
+    const specialChars = /\W/;
+
+    const hint = specialChars.test(str) ? 'not have special characters'
+      : '4-20 characters';
+
     return {
       isValid: regex.test(str),
-      msg: 'Please enter a valid username'
+      msg: `Username should ${hint}`,
     };
   },
   password(str='') {
@@ -26,11 +31,11 @@ export default {
     const hint = !length.test(str) ? 'six characters' 
       : !hasUpperCase.test(str) ? 'one uppercase'
       : !hasLowerCase.test(str) ? 'one lowercase'
-      : 'one digit'
+      : 'one digit';
 
     return {
       isValid: regex.test(str),
-      msg: `Password should have ${hint}`
+      msg: `Password should have ${hint}`,
     };
   },
 };
