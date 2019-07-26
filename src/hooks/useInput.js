@@ -1,13 +1,17 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import validate from 'utils/inputValidation';
 
 const useInput = (label, type, id) => {
   
   const [value, setValue] = useState('');
-  const [valid, setValid] = useState(false);
+  const [valid, setValid] = useState(null);
 
+  // effect react on input value changes
   useEffect(() => {
-    if (validate[id](value)) {
+    const isValid = validate[id](value);
+
+    if (isValid && value) {
       setValid(true);
     } else {
       setValid(false);
@@ -16,7 +20,6 @@ const useInput = (label, type, id) => {
 
   const onChange = e => {
     e.preventDefault();
-
     setValue(e.target.value);
   }
 

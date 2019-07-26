@@ -21,12 +21,8 @@ export default {
     return regex.test(str)
   },
   website(str) {
-    // if URL constructor can create a url from str, validation passes
-    try {
-      new URL(str);
-      return true;
-    } catch {
-      return false
-    }
+    // matches url starting from http(s), www or a name
+    const regex = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/;
+    return regex.test(str);
   },
 }
