@@ -14,9 +14,9 @@ const Form = () => {
   const { value: businessEmail, valid: busEmailValid, ...businessEmailHandler } = useInput('Business Email', 'email', 'email');
   const { value: userName, valid: userNameValid, ...userNameHandler } = useInput('Create a Username', 'userName');
   const { value: password, valid: passwordValid, ...passwordNameHandler } = useInput('Password', 'password', 'password');
-  const { value: website, ...websiteHandler } = useInput('Website', 'website');
-  const { valid: terms, ...termsHandler } = useInput('Terms of Service', 'terms', 'checkbox');
-  const { valid: policy, ...policyHandler } = useInput('Privacy Policy', 'policy', 'checkbox');
+  const { value: website, valid: websiteValid, ...websiteHandler } = useInput('Website', 'website');
+  const { value: terems, valid: terms, ...termsHandler } = useInput('Terms of Service', 'terms', 'checkbox');
+  const { value: polcy, valid: policy, ...policyHandler } = useInput('Privacy Policy', 'policy', 'checkbox');
   const { value: selectBusiness, ...selectHandler } = useSelect(['Logistics', 'E-commerce', 'Retail', 'Not sure'])
 
   // enables button when all field are valid and checkboxes checked

@@ -34,6 +34,7 @@ const useInput = (label, id, type = 'text') => {
     value,
     valid,
     id,
+    'data-valid': valid,
   }
 }
 
