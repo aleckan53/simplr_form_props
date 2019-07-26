@@ -15,8 +15,7 @@ const useInput = (name, type) => {
   }
 
   return {
-    id: name,
-    label: name,
+    name,
     type,
     onChange,
     value,
