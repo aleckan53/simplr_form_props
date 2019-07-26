@@ -64,6 +64,13 @@ code {
   color: black;
 }
 
+.form .input:focus, .form select:focus {
+  outline-color: #44b1df;
+  outline-style: solid;
+  outline-width: 2px;
+  background: #fff;
+}
+
 .form .input {
   border-style: solid;
   border-width: 1px;
@@ -117,6 +124,12 @@ code {
   color: #376ba1;
   text-decoration: none;
   border-bottom: 1px solid #376ba1;
+}
+
+.form p a:focus {
+  outline-color: #44b1df;
+  outline-style: solid;
+  outline-width: 2px;
 }
 
 .form .submit {

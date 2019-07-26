@@ -67,6 +67,12 @@ code {
     font-size: 1rem;
     color: black;
 
+    &:focus {
+      outline-color: $mainColor;
+      outline-style: solid;
+      outline-width: 2px;
+      background: #fff;
+    }
   }
   
   .input {
@@ -117,7 +123,13 @@ code {
     a {
       color: $linkColor;
       text-decoration: none;
-      border-bottom: 1px solid $linkColor;
+      border-bottom: 1px solid $linkColor;  
+
+      &:focus {
+        outline-color: $mainColor;
+        outline-style: solid;
+        outline-width: 2px;
+      }  
     }
   }
 
