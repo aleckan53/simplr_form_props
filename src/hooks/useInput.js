@@ -1,11 +1,17 @@
 import { useState, useEffect } from 'react';
+import validate from 'utils/inputValidation';
 
-const useInput = (name, type) => {
+const useInput = (label, type, id) => {
   
   const [value, setValue] = useState('');
+  const [valid, setValid] = useState(false);
 
   useEffect(() => {
-    console.log(value);
+    if (validate[id](value)) {
+      setValid(true);
+    } else {
+      setValid(false);
+    }
   }, [value]);
 
   const onChange = e => {
@@ -15,10 +21,12 @@ const useInput = (name, type) => {
   }
 
   return {
-    name,
+    label,
     type,
     onChange,
     value,
+    valid,
+    id,
   }
 }
 

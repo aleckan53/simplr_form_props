@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Input = ({ name, type, onChange }) => {
+const Input = ({ label, type, onChange, id, valid }) => {
 
   return <>
-    {name && <label htmlFor={name}>{name}</label>}
-    <input type={type} onChange={onChange} id={name}/>
+    {label && <label htmlFor={id}>{label}</label>}
+    <input type={type} onChange={onChange} id={id} data-valid={valid}/>
   </>
 }
 
