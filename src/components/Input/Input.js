@@ -10,7 +10,7 @@ const Input = ({ label, id, type = 'text', children, hint, optional }) => {
   const showMsg = !valid && type !== 'checkbox';
 
   return <>
-    <label htmlFor={id}>{label} {hint && <span>{hint}</span>}</label>
+    <label htmlFor={id} data-for={type}>{label} {hint && <span>{hint}</span>}</label>
     <input id={id} className={`input ${type}`} type={type} onChange={onChange} data-valid={valid}/>
     {showMsg && <div className='invalidMsg'><p>{invalidMsg}</p></div>}
     {children}

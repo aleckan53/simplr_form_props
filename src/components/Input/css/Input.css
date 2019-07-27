@@ -78,6 +78,15 @@ label span {
   }
 }
 
+label[data-for='checkbox'] {
+  font-weight: 700;
+  font-size: .8rem;
+}
+
+label[data-for='checkbox']:last-of-type {
+  margin-top: .1rem;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
