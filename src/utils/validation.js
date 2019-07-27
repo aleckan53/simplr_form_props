@@ -38,4 +38,12 @@ export default {
       msg: `Password should have ${hint}`,
     };
   },
+  businessName(str) {
+    const regex = /\w{2,}/;
+
+    return {
+      isValid: regex.test(str),
+      msg: `Please enter a Business Name`,
+    };
+  }
 };
