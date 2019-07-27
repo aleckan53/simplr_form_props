@@ -28,7 +28,7 @@ const Form = () => {
         <Input label='Privacy policy' id='policy' type='checkbox'>
           <p className='checkBoxDescription'>I have read and I do accept <a href='www.google.com'>privacy policy</a></p>
         </Input>
-        <Button name='Register' type='submit' disabled={allValid}/>
+        <Button name='Register' type='submit' disabled={!allValid}/>
       </fieldset>
     </form>
   );

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select matches snapshot 1`] = `
+<Select>
+  <label />
+  <select
+    className="select"
+    onChange={[Function]}
+  >
+    <option
+      value=""
+    >
+      Select your business
+    </option>
+    <option
+      key="0"
+      value="Logistics"
+    >
+      Logistics
+    </option>
+    <option
+      key="1"
+      value="E-Commerce"
+    >
+      E-Commerce
+    </option>
+    <option
+      key="2"
+      value="Tech"
+    >
+      Tech
+    </option>
+    <option
+      key="3"
+      value="Retail"
+    >
+      Retail
+    </option>
+  </select>
+</Select>
+`;

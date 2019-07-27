@@ -6,7 +6,7 @@ const Button = ({name, disabled, ...props}) => {
     <button 
       {...props}
       className='submit'
-      disabled={!disabled}>
+      disabled={disabled}>
       {name}
     </button>
   );

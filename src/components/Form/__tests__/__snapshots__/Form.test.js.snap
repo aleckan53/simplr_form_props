@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form matches snapshot 1`] = `
+<div>
+  <form
+    class="form"
+  >
+    <fieldset>
+      <legend>
+        LET'S GET STARTED
+      </legend>
+      <label
+        for="businessName"
+      >
+        Business name
+         
+      </label>
+      <input
+        class="input text"
+        id="businessName"
+        type="text"
+      />
+      <div
+        class="invalidMsg"
+      >
+        <p />
+      </div>
+      <label
+        for="email"
+      >
+        Business email
+         
+      </label>
+      <input
+        class="input email"
+        id="email"
+        type="email"
+      />
+      <div
+        class="invalidMsg"
+      >
+        <p />
+      </div>
+      <label
+        for="username"
+      >
+        Create a username
+         
+      </label>
+      <input
+        class="input text"
+        id="username"
+        type="text"
+      />
+      <div
+        class="invalidMsg"
+      >
+        <p />
+      </div>
+      <label
+        for="password"
+      >
+        Password
+         
+        <span>
+          6 characters | 1 uppercase | 1 lowercase | 1 digit
+        </span>
+      </label>
+      <input
+        class="input password"
+        id="password"
+        type="password"
+      />
+      <div
+        class="invalidMsg"
+      >
+        <p />
+      </div>
+      <label
+        for="website"
+      >
+        Website
+         
+        <span>
+          (Optional)
+        </span>
+      </label>
+      <input
+        class="input text"
+        id="website"
+        type="text"
+      />
+      <div
+        class="invalidMsg"
+      >
+        <p />
+      </div>
+      <label
+        for="businessType"
+      >
+        Type of Business
+      </label>
+      <select
+        class="select"
+        id="businessType"
+      >
+        <option
+          value=""
+        >
+          Select your business
+        </option>
+        <option
+          value="Logistics"
+        >
+          Logistics
+        </option>
+        <option
+          value="E-Commerce"
+        >
+          E-Commerce
+        </option>
+        <option
+          value="Tech"
+        >
+          Tech
+        </option>
+        <option
+          value="Retail"
+        >
+          Retail
+        </option>
+      </select>
+      <label
+        for="terms"
+      >
+        Terms of service
+         
+      </label>
+      <input
+        class="input checkbox"
+        id="terms"
+        type="checkbox"
+      />
+      <p
+        class="checkBoxDescription"
+      >
+        I have read and I do accept 
+        <a
+          href="www.google.com"
+        >
+          terms of services
+        </a>
+      </p>
+      <label
+        for="policy"
+      >
+        Privacy policy
+         
+      </label>
+      <input
+        class="input checkbox"
+        id="policy"
+        type="checkbox"
+      />
+      <p
+        class="checkBoxDescription"
+      >
+        I have read and I do accept 
+        <a
+          href="www.google.com"
+        >
+          privacy policy
+        </a>
+      </p>
+      <button
+        class="submit"
+        disabled=""
+        type="submit"
+      >
+        Register
+      </button>
+    </fieldset>
+  </form>
+</div>
+`;
