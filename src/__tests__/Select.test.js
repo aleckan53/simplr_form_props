@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Select from '../Select';
+import Select from '../components/Select';
 
 describe('Select', () => {
   let wrapper;
