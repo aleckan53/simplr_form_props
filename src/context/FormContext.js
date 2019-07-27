@@ -26,14 +26,15 @@ export const FormProvider = ({ children }) => {
     password: '',
     website: '',
     businessType: '',
-    termsAccepted: false,
-    policyAccepted: false,
+    terms: false,
+    policy: false,
   });
 
+  // checks if all fields are valid
   useEffect(() => {
-    const allValid = Object.values(valid).includes(false || null);
-    setAllValid(!allValid);
-  }, [valid]);
+    const allValid = Object.values(valid).every(val => val === true);
+    setAllValid(allValid);
+  }, [valid, values]);
 
   const addValue = val => {
     setValues({ ...values, ...val });
@@ -45,8 +46,9 @@ export const FormProvider = ({ children }) => {
 
   return (
     <FormContext.Provider value={{
-      addValue, values,
-      addValid, valid,
+      addValue,
+      values,
+      addValid,
       allValid,
     }}>
       {children}

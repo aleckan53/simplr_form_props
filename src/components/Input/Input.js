@@ -2,7 +2,7 @@ import React from 'react';
 import useInput from 'hooks/useInput';
 
 const Input = ({ label, id, type = 'text', children, hint, optional }) => {
-  const { valid, onChange, invalidMsg } = useInput(id, type, optional);
+  const { valid, onChange, invalidMsg } = useInput(id, optional, type);
 
   // conditionally renders invalid msg
   const showMsg = !valid && type !== 'checkbox';

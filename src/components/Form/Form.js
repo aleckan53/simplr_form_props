@@ -1,17 +1,15 @@
 import React, { useContext } from 'react';
 import FormContext from 'context/FormContext';
 
-import Input from './Input';
-import Button from './Button';
-import Select from './Select';
+import { Input, Select, Button } from 'components';
 
 const Form = () => {
 
   const { values, allValid } = useContext(FormContext);
 
-  const onSubmit = (e) => {
+  const onSubmit = e => {
     e.preventDefault();
-    console.log(values);
+    console.log(`POST data to server: ${values}`);
   }
   
   return (
@@ -33,7 +31,7 @@ const Form = () => {
         <Button name='Register' type='submit' disabled={allValid}/>
       </fieldset>
     </form>
-  )
-}
+  );
+};
 
 export default Form;

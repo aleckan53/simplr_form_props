@@ -1,12 +1,11 @@
 import React from 'react';
 
-const Button = ({name, onClick, type, disabled}) => {
+const Button = ({name, disabled, ...props}) => {
 
   return (
     <button 
+      {...props}
       className='submit'
-      onClick={onClick} 
-      type={type} 
       disabled={!disabled}>
       {name}
     </button>

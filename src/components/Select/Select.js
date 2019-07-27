@@ -1,11 +1,11 @@
 import React from 'react';
 import useInput from 'hooks/useInput';
 
-const Select = ({ id, label }) => {
+const Select = ({ id, label, optional }) => {
   // hardcoded options
   const options = ['Logistics', 'E-Commerce', 'Tech', 'Retail'];
 
-  const { onChange } = useInput(id);
+  const { onChange } = useInput(id, optional);
 
   return <>
   <label htmlFor={id}>{label}</label>

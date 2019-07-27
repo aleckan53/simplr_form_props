@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect, useContext } from 'react';
-import validate from 'utils/inputValidation';
+import validate from 'utils/validation';
 import FormContext from 'context/FormContext';
 
-const useInput = (id, type = 'text', optional) => {
+const useInput = (id, optional, type = 'text') => {
   const { addValue, addValid } = useContext(FormContext);
   
   const [value, setValue] = useState(null);
@@ -36,12 +36,13 @@ const useInput = (id, type = 'text', optional) => {
       }
     } 
 
-    if(!optional) {
-      addValue({ [id]: value });
-      addValid({ [id]: valid });  
+    if(optional) {
+      addValid({ [id]: true });
     } else {
-      addValid({ [id]: true});
+      addValid({ [id]: valid });  
     }
+
+    addValue({ [id]: value });
 
   }, [value, valid]);
 
