@@ -31,7 +31,7 @@ export const FormProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    const allValid = Object.values(valid).includes(false);
+    const allValid = Object.values(valid).includes(false || null);
     setAllValid(!allValid);
   }, [valid]);
 

@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import validate from 'utils/inputValidation';
 import FormContext from 'context/FormContext';
 
-const useInput = (id, type = 'text') => {
+const useInput = (id, type = 'text', optional) => {
   const { addValue, addValid } = useContext(FormContext);
   
   const [value, setValue] = useState(null);
@@ -34,10 +34,14 @@ const useInput = (id, type = 'text') => {
         setValid(null);
         setInvalidMsg(null);
       }
-    }
+    } 
 
-    addValue({ [id]: value });
-    addValid({ [id]: valid });
+    if(!optional) {
+      addValue({ [id]: value });
+      addValid({ [id]: valid });  
+    } else {
+      addValid({ [id]: true});
+    }
 
   }, [value, valid]);
 
