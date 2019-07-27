@@ -2,7 +2,9 @@
 
 exports[`Input matches snapshot 1`] = `
 <Input>
-  <label>
+  <label
+    data-for="text"
+  >
      
   </label>
   <input

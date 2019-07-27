@@ -1,14 +1,17 @@
+@mixin font($size: 1rem, $color: yellow, $weight: 400) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight
+}
+
 .input {
+  @include font(.9rem, black);
   appearance: none;
   border-radius: 0;
+  border: 1px solid var(--inputBorder);
   width: 100%;
   height: 2rem;
   padding: .2rem .5rem;
-  font-size: .9rem;
-  color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-color: var(--inputBorder);
   background-color: var(--inputBg);
 
   &:focus {
@@ -47,8 +50,7 @@
   p {
     position: absolute;
     left: 0;
-    color: red;
-    font-size: 12px;
+    @include font(.7rem, red);
   }
 }
 
@@ -63,9 +65,7 @@ label {
   }
 
   span {
-    font-size: .6rem;
-    color: var(--lightGray);
-
+    @include font(.6rem, var(--lightGray));
     @media only screen and (max-width: 374px) {
       font-size: 8px;
     }
@@ -74,7 +74,8 @@ label {
   &[data-for='checkbox'] {
     font-weight: 700;
     font-size: .8rem;
-    
+    @include font(.8rem, #000, 700);
+
     &:last-of-type {
       margin-top: .7rem;
     }

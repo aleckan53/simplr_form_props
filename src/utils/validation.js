@@ -14,7 +14,7 @@ export default {
     const specialChars = /\W/;
 
     const hint = specialChars.test(str) ? 'not have special characters'
-      : '4-20 characters';
+      : 'have 4-20 characters';
 
     return {
       isValid: regex.test(str),

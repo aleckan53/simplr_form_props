@@ -10,6 +10,7 @@ exports[`Form matches snapshot 1`] = `
         LET'S GET STARTED
       </legend>
       <label
+        data-for="text"
         for="businessName"
       >
         Business name
@@ -26,6 +27,7 @@ exports[`Form matches snapshot 1`] = `
         <p />
       </div>
       <label
+        data-for="email"
         for="email"
       >
         Business email
@@ -42,9 +44,10 @@ exports[`Form matches snapshot 1`] = `
         <p />
       </div>
       <label
+        data-for="text"
         for="username"
       >
-        Create a username
+        Create a Username
          
       </label>
       <input
@@ -58,6 +61,7 @@ exports[`Form matches snapshot 1`] = `
         <p />
       </div>
       <label
+        data-for="password"
         for="password"
       >
         Password
@@ -77,6 +81,7 @@ exports[`Form matches snapshot 1`] = `
         <p />
       </div>
       <label
+        data-for="text"
         for="website"
       >
         Website
@@ -131,9 +136,10 @@ exports[`Form matches snapshot 1`] = `
         </option>
       </select>
       <label
+        data-for="checkbox"
         for="terms"
       >
-        Terms of service
+        Terms of Service
          
       </label>
       <input
@@ -152,9 +158,10 @@ exports[`Form matches snapshot 1`] = `
         </a>
       </p>
       <label
+        data-for="checkbox"
         for="policy"
       >
-        Privacy policy
+        Privacy Policy
          
       </label>
       <input

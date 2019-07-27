@@ -1,16 +1,15 @@
 .input {
+  color: black;
+  font-size: 0.9rem;
+  font-weight: 400;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   border-radius: 0;
+  border: 1px solid var(--inputBorder);
   width: 100%;
   height: 2rem;
   padding: .2rem .5rem;
-  font-size: .9rem;
-  color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-color: var(--inputBorder);
   background-color: var(--inputBg);
 }
 
@@ -53,7 +52,8 @@
   position: absolute;
   left: 0;
   color: red;
-  font-size: 12px;
+  font-size: 0.7rem;
+  font-weight: 400;
 }
 
 label {
@@ -68,8 +68,9 @@ label:not(:first-of-type) {
 }
 
 label span {
-  font-size: .6rem;
   color: var(--lightGray);
+  font-size: 0.6rem;
+  font-weight: 400;
 }
 
 @media only screen and (max-width: 374px) {
@@ -81,6 +82,9 @@ label span {
 label[data-for='checkbox'] {
   font-weight: 700;
   font-size: .8rem;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
 label[data-for='checkbox']:last-of-type {
