@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "alias": "simplr",
+  "name": "form",
+  "routes": [
+      {
+        "src": "^/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": ".*",
+        "dest": "/index.html"
+      }
+  ]
+}
