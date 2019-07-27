@@ -173,7 +173,7 @@ exports[`Form matches snapshot 1`] = `
         </a>
       </p>
       <button
-        class="submit"
+        class="btn"
         disabled=""
         type="submit"
       >

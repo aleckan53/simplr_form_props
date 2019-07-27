@@ -1,4 +1,5 @@
 import React from 'react';
+import './css/Input.css';
 import useInput from 'hooks/useInput';
 
 const Input = ({ label, id, type = 'text', children, hint, optional }) => {

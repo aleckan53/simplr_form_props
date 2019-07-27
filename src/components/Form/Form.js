@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import './css/Form.css';
 import FormContext from 'context/FormContext';
 
 import { Input, Select, Button } from 'components';
