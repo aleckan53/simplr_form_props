@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+@import "variables"; // colors
+@import "mixins"; // mixins
+@import "base"; // base css and reset
+
+.form {
+  @include bgImage(80px, center 2rem, url('https://www.simplr.ai/hubfs/Simplr-December2017/Image/logo.svg'));
+  box-shadow: 0px 3px 5px 0px rgba(1, 1, 1, 0.2);
+  padding: 5rem 10% 2rem;
+
+  @media only screen and (min-width: 560px) {
+    @include block-center();
+    background-position: 1rem 1rem;
+    padding: 3rem 137px;
+    width: 550px;
+  }
+
+  fieldset {
+    @include block-center();
+    border: none;
+  }
+  
+  legend {
+    @include block-center();
+    @include fontFixed(1.5rem, $mainColor, 300);
+    margin-bottom: 1rem;
+
+    @media only screen and (min-width: 560px) {
+      font-size: 1.7rem;
+    }
+  }
+}
+
+.checkBoxDescription {
+  display: inline-block;
+  padding-left: .5rem ;
+  transform: translateY(-3px);
+  font-size: calc(10px + 10 * ((100vw - 300px) / (1600 - 300)));
+
+  @media only screen and (min-width: 560px) {
+    font-size: .75rem
+  }
+
+  a {
+    color: var(--linkColor);
+    text-decoration: none;
+    border-bottom: 1px solid var(--linkColor);  
+
+    &:focus {
+      @include outline();
+    }  
+  }
+}
+
+.input {
+  @include fontFixed(.9rem, black);
+  appearance: none;
+  border-radius: 0;
+  border: 1px solid $inputBorder;
+  width: 100%;
+  height: 2rem;
+  padding: .2rem .5rem;
+  background-color: $inputBg;
+
+  &:focus {
+    @include outline();
+    background: #fff;
+  }
+
+  &[data-valid='false']:not(.checkbox) {
+    border: 1px solid red;
+  }
+
+  &.checkbox {
+    width: auto;
+    display: inline-block;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid $labelColor;
+    cursor: pointer;
+
+    &:checked {
+      @include bgImage('contain', (2px 2px, 0 0), url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0.181in" height="0.139in"%3E%3Cpath fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M13.000,1.249 L11.419,-0.002 L5.180,7.255 L1.284,4.257 L0.001,5.790 L5.475,10.002 L13.000,1.249 Z"/%3E%3C/svg%3E'));
+      background-color: #4b4b4b;
+    }
+  }
+}
+
+.invalidMsg {
+  position: relative;
+
+  p {
+    position: absolute;
+    left: 0;
+    @include fontFixed(.7rem, red);
+  }
+}
+
+label {
+  @include fontFixed(.9rem, $labelColor);
+  display: block;
+  margin-bottom: .2rem;
+  
+  &:not(:first-of-type) {
+    margin-top: 1rem;
+  }
+
+  span {
+      @include fontFixed(.6rem, $lightGray);
+      @media only screen and (max-width: 374px) {
+      font-size: 8px;
+    }
+  }
+
+  &[data-for='checkbox'] {
+    @include fontFixed(.8rem, #000, 700);
+
+    &:last-of-type {
+      margin-top: .7rem;
+    }
+  }
+}

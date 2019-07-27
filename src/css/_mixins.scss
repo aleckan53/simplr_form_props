@@ -1,0 +1,23 @@
+@mixin block-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin bgImage($size: 'contain', $position: 'center', $img: '') {
+  background-size: $size;
+  background-position: $position;
+  background-image: $img;
+  background-repeat: no-repeat;
+}
+
+@mixin fontFixed($size: 1rem, $color: black, $weight: 400) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight
+}
+
+@mixin outline() {
+  outline-color: $mainColor;
+  outline-style: solid;
+  outline-width: 2px;
+}
