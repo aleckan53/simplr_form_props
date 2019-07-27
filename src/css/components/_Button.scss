@@ -1,0 +1,19 @@
+.btn {
+  @include fontFixed(1rem, #fff);
+  @include block-center;
+  text-transform: uppercase;
+  width: 50%;
+  height: 2.5rem;
+  display: block;
+  margin-top: 5rem;
+  border: none;
+  background-color: $mainColor;
+  cursor: pointer;
+  transition: background-color .5s;
+
+  &:disabled {
+    background-color: $lightGray;
+    opacity: .8;
+    transition: background-color .5s;
+  }
+}

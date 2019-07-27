@@ -1,5 +1,4 @@
 import React from 'react';
-import './css/Select.css';
 import useInput from 'hooks/useInput';
 
 const Select = ({ id, label, optional }) => {

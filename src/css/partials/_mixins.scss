@@ -21,3 +21,13 @@
   outline-style: solid;
   outline-width: 2px;
 }
+
+@mixin input {
+  appearance: none;
+  border-radius: 0;
+  border: 1px solid $inputBorder;
+  width: 100%;
+  height: 2rem;
+  padding: .2rem .5rem;
+  background-color: $inputBg;
+}
