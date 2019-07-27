@@ -5,9 +5,12 @@ exports[`Select matches snapshot 1`] = `
   <label />
   <select
     className="select"
+    defaultValue=""
     onChange={[Function]}
   >
     <option
+      disabled={true}
+      id="disabled"
       value=""
     >
       Select your business
@@ -35,6 +38,12 @@ exports[`Select matches snapshot 1`] = `
       value="Retail"
     >
       Retail
+    </option>
+    <option
+      key="4"
+      value="Other"
+    >
+      Other
     </option>
   </select>
 </Select>

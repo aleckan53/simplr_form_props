@@ -110,6 +110,9 @@ exports[`Form matches snapshot 1`] = `
         id="businessType"
       >
         <option
+          disabled=""
+          id="disabled"
+          selected=""
           value=""
         >
           Select your business
@@ -133,6 +136,11 @@ exports[`Form matches snapshot 1`] = `
           value="Retail"
         >
           Retail
+        </option>
+        <option
+          value="Other"
+        >
+          Other
         </option>
       </select>
       <label

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({name, disabled, ...props}) => {
+const Button = ({ name, disabled, ...props }) => {
 
   return (
     <button 

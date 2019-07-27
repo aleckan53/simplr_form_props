@@ -1,13 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
-:root {
-  --mainColor: #44b1df;
-  --labelColor: #2b2b2b;
-  --lightGray: #6f6f6f;
-  --linkColor: #376ba1;
-  --inputBorder: rgb(195, 195, 195);
-  --inputBg: rgb(242, 242, 242);
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +16,22 @@ body {
   min-width: 320px;
 }
 
+html {
+  font-size: 16px;
+}
+
+@media only screen and (min-width: 2400px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 3800px) {
+  html {
+    font-size: 25px;
+  }
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -34,7 +41,7 @@ input:-webkit-autofill:active {
 }
 
 .form {
-  background-size: 80px;
+  background-size: 5rem;
   background-position: center 2rem;
   background-image: url("https://www.simplr.ai/hubfs/Simplr-December2017/Image/logo.svg");
   background-repeat: no-repeat;
@@ -50,6 +57,20 @@ input:-webkit-autofill:active {
     background-position: 1rem 1rem;
     padding: 3rem 137px;
     width: 550px;
+  }
+}
+
+@media only screen and (min-width: 2400px) {
+  .form {
+    width: 650px;
+    padding: 3rem 160px;
+  }
+}
+
+@media only screen and (min-width: 3800px) {
+  .form {
+    width: 800px;
+    padding: 3rem 200px;
   }
 }
 
@@ -79,7 +100,7 @@ input:-webkit-autofill:active {
   padding-left: .5rem;
   -webkit-transform: translateY(-3px);
           transform: translateY(-3px);
-  font-size: calc(10px + 10 * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(10px + 40 * ((100vw - 300px) / (1600 - 300)));
 }
 
 @media only screen and (min-width: 560px) {
@@ -89,9 +110,9 @@ input:-webkit-autofill:active {
 }
 
 .checkBoxDescription a {
-  color: var(--linkColor);
+  color: #376ba1;
   text-decoration: none;
-  border-bottom: 1px solid var(--linkColor);
+  border-bottom: 1px solid #376ba1;
 }
 
 .checkBoxDescription a:focus {
@@ -216,6 +237,10 @@ label[data-for='checkbox']:last-of-type {
   outline-style: solid;
   outline-width: 2px;
   background-color: #fff;
+}
+
+.select option span {
+  color: red;
 }
 
 .btn {

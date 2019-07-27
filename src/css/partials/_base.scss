@@ -14,6 +14,18 @@ body {
   min-width: 320px;
 }
 
+html {
+  font-size: 16px;
+
+  @media only screen and (min-width: 2400px) {
+    font-size: 20px;
+  }
+
+  @media only screen and (min-width: 3800px) {
+    font-size: 25px;
+  }
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 

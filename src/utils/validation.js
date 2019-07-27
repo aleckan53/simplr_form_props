@@ -43,7 +43,7 @@ export default {
 
     return {
       isValid: regex.test(str),
-      msg: `Please enter a Business Name`,
+      msg: `Please enter a valid Business Name`,
     };
   }
 };

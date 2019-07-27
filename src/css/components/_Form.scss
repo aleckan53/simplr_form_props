@@ -1,5 +1,5 @@
 .form {
-  @include bgImage(80px, center 2rem, url('https://www.simplr.ai/hubfs/Simplr-December2017/Image/logo.svg'));
+  @include bgImage(5rem, center 2rem, url('https://www.simplr.ai/hubfs/Simplr-December2017/Image/logo.svg'));
   box-shadow: 0px 3px 5px 0px rgba(1, 1, 1, 0.2);
   padding: 5rem 10% 2rem;
 
@@ -9,6 +9,15 @@
     padding: 3rem 137px;
     width: 550px;
   }
+
+  @media only screen and (min-width: 2400px) {
+    width: 650px;
+    padding: 3rem 160px;
+  }  
+  @media only screen and (min-width: 3800px) {
+    width: 800px;
+    padding: 3rem 200px;
+  }  
 
   fieldset {
     @include block-center();
@@ -30,16 +39,16 @@
   display: inline-block;
   padding-left: .5rem ;
   transform: translateY(-3px);
-  font-size: calc(10px + 10 * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(10px + 40 * ((100vw - 300px) / (1600 - 300)));
 
   @media only screen and (min-width: 560px) {
     font-size: .75rem
   }
 
   a {
-    color: var(--linkColor);
+    color: $linkColor;
     text-decoration: none;
-    border-bottom: 1px solid var(--linkColor);  
+    border-bottom: 1px solid $linkColor;  
 
     &:focus {
       @include outline();
