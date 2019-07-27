@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Input from '../components/Input';
+import { Input } from 'components';
 import toJson from 'enzyme-to-json';
 
 describe('Input', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { mount } from 'enzyme';
-import Button from '../Button';
+import { Button } from 'components';
 
 describe('Button', () => {
   let root;
