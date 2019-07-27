@@ -7,6 +7,6 @@ const App = () => {
       <Form/>
     </div>
   );
-}
+};
 
 export default App;

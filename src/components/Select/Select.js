@@ -8,7 +8,7 @@ const Select = ({ id, label, optional }) => {
   const { onChange } = useInput(id, optional);
 
   return <>
-  <label htmlFor={id}>{label}</label>
+    <label htmlFor={id}>{label}</label>
     <select className='select' id={id} onChange={onChange}>
       <option value=''>Select your business</option>
       {options.map((opt, i) => <option key={i} value={opt}>{opt}</option>)}

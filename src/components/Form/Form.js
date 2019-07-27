@@ -10,7 +10,7 @@ const Form = () => {
   const onSubmit = e => {
     e.preventDefault();
     console.log(`POST data to server: ${values}`);
-  }
+  };
   
   return (
     <form className='form' onSubmit={onSubmit}>
