@@ -1,23 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import FormContext from 'context/FormContext';
 import { Input, Select, Button } from 'components';
+import useFormState from 'hooks/useFormState';
 
 const Form = () => {
 
-  const { values, allValid } = useContext(FormContext);
 
   const onSubmit = e => {
     e.preventDefault();
     console.log(`POST data to server`);
-    console.log(values);
   };
-  
+
+  const { state, onChange } = useFormState();
+
   return (
     <form className='form' onSubmit={onSubmit}>
       <fieldset>
       <legend>LET'S GET STARTED</legend>
-        <Input label='Business name' id='businessName' optional/>
-        <Input label='Business email' id='email' type='email'/>
+        <Input label='Business Name' id='businessName' onChange={onChange}/>
+        <Input label='Business Email' id='businessName' onChange={onChange}/>
+        {/* <Input label='Business email' id='email' type='email'/>
         <Input label='Create a Username' id='username'/>
         <Input label='Password' id='password' type='password' hint='6 characters | 1 uppercase | 1 lowercase | 1 digit'/>
         <Input label='Website' id='website' optional hint='(Optional)'/>
@@ -27,8 +29,8 @@ const Form = () => {
         </Input>
         <Input label='Privacy Policy' id='policy' type='checkbox'>
           <p className='checkBoxDescription'>I have read and I do accept <a href='/'>privacy policy</a></p>
-        </Input>
-        <Button name='Register' type='submit' disabled={!allValid}/>
+        </Input> */}
+        <Button name='Register' type='submit'/>
       </fieldset>
     </form>
   );
