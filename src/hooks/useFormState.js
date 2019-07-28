@@ -16,12 +16,12 @@ const useFormState = () => {
     console.log(state);
   }, [state]);
 
-  const onChange = val => {
-    setState({...state, ...val});
+  const updateState = (id, val) => {
+    setState({...state, [id]: val});
   };
 
   return {
-    state, onChange,
+    state, updateState,
   };
 };
 

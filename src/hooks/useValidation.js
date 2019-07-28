@@ -1,24 +1,29 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import validate from 'utils/validation';
 
-const useValidation = (id, value) => {
+const useValidation = () => {
 
   const [valid, setValid] = useState(null);
+  const [delay, setDelay] = useState(null);
   const [msg, setMsg] = useState(null);
 
-  useEffect(() => {
+  const checkValidation = (id, val) => {
     if(id in validate) {
-      const { isValid, msg } = validate[id](value);
-      setValid(isValid);
-      setMsg(msg);
+      clearTimeout(delay);
+      setDelay(setTimeout(() => {
+        const { isValid, msg } = validate[id](val);
+        setValid(isValid);
+        setMsg(msg);
+      }, 700))
     } else {
       setValid(true);
     }    
-  }, [value]);
+  };
 
   return {
     valid,
     msg,
+    checkValidation,
     'data-valid': valid,
   };
 };

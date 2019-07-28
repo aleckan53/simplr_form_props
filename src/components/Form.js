@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from 'react';
-import FormContext from 'context/FormContext';
 import { Input, Select, Button } from 'components';
 import useFormState from 'hooks/useFormState';
 import useValidation from 'hooks/useValidation';
@@ -7,28 +6,24 @@ import useAllValid from 'hooks/useAllValid';
 
 const Form = () => {
 
+  const { state, updateState } = useFormState();
+  const { allValid, addValidField } = useAllValid();
 
   const onSubmit = e => {
     e.preventDefault();
     console.log(`POST data to server`);
+    if(!allValid) {
+      return;
+    }
   };
-
-  const { state, onChange } = useFormState();
-  const { allValid, addValidField } = useAllValid();
-
-  const handleChange = e => {
-    const val = e.target.value;
-
-
-  }
 
 
   return (
     <form className='form' onSubmit={onSubmit}>
       <fieldset>
       <legend>LET'S GET STARTED</legend>
-        <Input label='Business Name' id='businessName' onChange={onChange} addValidField={addValidField}/>
-        <Input label='Business Email' id='email' onChange={onChange}/>
+        <Input label='Business Name' id='businessName' updateState={updateState} addValidField={addValidField}/>
+        <Input label='Business Email' id='email' updateState={updateState} addValidField={addValidField}/>
         {/* <Input label='Business email' id='email' type='email'/>
         <Input label='Create a Username' id='username'/>
         <Input label='Password' id='password' type='password' hint='6 characters | 1 uppercase | 1 lowercase | 1 digit'/>
