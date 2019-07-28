@@ -16,10 +16,11 @@
   font-weight: $weight
 }
 
-@mixin outline() {
-  outline-color: $mainColor;
+@mixin outline($color: $mainColor) {
+  outline-color: $color;
   outline-style: solid;
-  outline-width: 2px;
+  outline-width: 1px;
+  outline-offset: -1px;
 }
 
 @mixin input {

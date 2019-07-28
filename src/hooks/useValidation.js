@@ -41,7 +41,6 @@ const useValidation = (inputType) => {
     valid,
     msg,
     checkValidation,
-    'data-valid': valid,
   };
 };
 

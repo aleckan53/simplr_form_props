@@ -118,7 +118,8 @@ input:-webkit-autofill:active {
 .checkBoxDescription a:focus {
   outline-color: #44b1df;
   outline-style: solid;
-  outline-width: 2px;
+  outline-width: 1px;
+  outline-offset: -1px;
 }
 
 .input {
@@ -139,12 +140,17 @@ input:-webkit-autofill:active {
 .input:focus {
   outline-color: #44b1df;
   outline-style: solid;
-  outline-width: 2px;
+  outline-width: 1px;
+  outline-offset: -1px;
   background: #fff;
 }
 
 .input[data-valid='false']:not(.checkbox) {
-  border: 1px solid red;
+  border: 1px solid green;
+  outline-color: red;
+  outline-style: solid;
+  outline-width: 1px;
+  outline-offset: -1px;
 }
 
 .input.checkbox {
@@ -235,7 +241,8 @@ label[data-for='checkbox']:last-of-type {
 .select:focus {
   outline-color: #44b1df;
   outline-style: solid;
-  outline-width: 2px;
+  outline-width: 1px;
+  outline-offset: -1px;
   background-color: #fff;
 }
 

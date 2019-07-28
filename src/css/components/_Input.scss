@@ -3,12 +3,13 @@
   @include input;
 
   &:focus {
-    @include outline();
+    @include outline;
     background: #fff;
   }
 
   &[data-valid='false']:not(.checkbox) {
-    border: 1px solid red;
+    border: 1px solid green;
+    @include outline(red);
   }
 
   &.checkbox {
