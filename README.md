@@ -7,30 +7,34 @@
 ### Data flow
 <img src='./readme/data_flow.jpeg'/>
 React Context is used for global state management.
-<div style='font-size: 2rem'>...</div>
+
+--
+
 The following set of props may be passed to create new Input: 
 
-`label:String` - Label for input<br/>
-`type:String` - Input type (text || email || password || checkbox)<br/>
-`hint:String` - Hint inside `<label/>`<br/>
-`optional:Boolean` - If passed, validation skipped<br/>
-`id:String` - Identifier for `<input id={id}/>`, `<label htmlFor={id}/>`, validation function `validate[id]()`
-<div style='font-size: 2rem'>...</div>
+- `label:String` - Label for input<br/>
+- `type:String` - Input type (text || email || password || checkbox)<br/>
+- `hint:String` - Hint inside `<label/>`<br/>
+- `optional:Boolean` - If passed, validation skipped<br/>
+- `id:String` - Identifier for `<input id={id}/>`, `<label htmlFor={id}/>`, validation function `validate[id]()`
+
+--
 
 `Input` instantiates `useInput` hook, which handles value updates and validation. `useInput` hook returns `onChange, valid, invalidMsg`. 
 
 • `valid:Boolean` - current input's value validation status<br/>
 • `inValidMsg` - conditionally renders red message below the input if `valid === false`.<br/>
 • `onChange:Function` - updates `Input` state with `e.target.value`. If `type==='checkbox'` toggles state `true | false`
-<div style='font-size: 2rem'>...</div>
 
+--
 
 `useEffect` in `useInput` observes `value` and `valid` changes and updates corresponding `value` and `valid` in `FormContext`. When `value` is empty, resets `value` and `valid` to `null`. This prevents displaying validation message render when input has no value. Runs validation with 700ms delay, to let a user finish typing. Deleay reset on every keypress to prevent timeout bubbling.
 
-<div style='font-size: 2rem'>...</div>
+--
 
 When all inputs (values) are valid, `useEffect` in `FormContext` sets `allValid` state property to true, which enables Submit button (and changes its bg color to blue).
-<hr/>
+
+--
 
 On `Form` submit all values are logged to the console.
 
