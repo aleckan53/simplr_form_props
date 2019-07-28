@@ -2,7 +2,14 @@ import { useState, useEffect } from 'react';
 
 const useFormState = () => {
   const [state, setState] = useState({
-
+    businessName: '',
+    email: '',
+    username: '',
+    password: '',
+    website: '',
+    businessType: '',
+    terms: false,
+    policy: false,
   });
 
   useEffect(() => {

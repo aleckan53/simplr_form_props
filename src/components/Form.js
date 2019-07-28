@@ -3,6 +3,7 @@ import FormContext from 'context/FormContext';
 import { Input, Select, Button } from 'components';
 import useFormState from 'hooks/useFormState';
 import useValidation from 'hooks/useValidation';
+import useAllValid from 'hooks/useAllValid';
 
 const Form = () => {
 
@@ -13,15 +14,21 @@ const Form = () => {
   };
 
   const { state, onChange } = useFormState();
-  
+  const { allValid, addValidField } = useAllValid();
+
+  const handleChange = e => {
+    const val = e.target.value;
+
+
+  }
 
 
   return (
     <form className='form' onSubmit={onSubmit}>
       <fieldset>
       <legend>LET'S GET STARTED</legend>
-        <Input label='Business Name' id='businessName' onChange={onChange}/>
-        <Input label='Business Email' id='businessName' onChange={onChange}/>
+        <Input label='Business Name' id='businessName' onChange={onChange} addValidField={addValidField}/>
+        <Input label='Business Email' id='email' onChange={onChange}/>
         {/* <Input label='Business email' id='email' type='email'/>
         <Input label='Create a Username' id='username'/>
         <Input label='Password' id='password' type='password' hint='6 characters | 1 uppercase | 1 lowercase | 1 digit'/>

@@ -2,7 +2,7 @@ import React from 'react';
 import useInput from 'hooks/useInput';
 import useValidation from 'hooks/useValidation';
 
-const Input = ({ label, id, onChange, type='text', hint }) => {
+const Input = ({ label, id, onChange, type='text', hint, addValidField }) => {
   // const { valid, onChange, invalidMsg } = useInput(id, optional, type);
 
   // // conditionally renders invalid msg
@@ -14,7 +14,8 @@ const Input = ({ label, id, onChange, type='text', hint }) => {
     // updates form's state
     onChange(val);
     // updates valid in form
-    
+    console.log(valid, msg)
+    // addValidField(id, valid);
   }
 
   const showMsg = !valid && type !== 'checkbox';
@@ -22,7 +23,7 @@ const Input = ({ label, id, onChange, type='text', hint }) => {
 
   return <>
     <label htmlFor={id} data-for={type}>{label}{hint && <span>{hint}</span>}</label> 
-    <input id={id} className={`input ${type}`} type='text' onChange={e => onChange({[id]: e.target.value})}/>
+    <input id={id} className={`input ${type}`} type='text' onChange={handleChange}/>
     {showMsg && <div className='invalidMsg'><p>{msg}</p></div>}
 
     {/* <label htmlFor={id} data-for={type}>{label} {hint && <span>{hint}</span>}</label>
