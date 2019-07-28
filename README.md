@@ -22,13 +22,13 @@ The following set of props may be passed to create new Input:
 
 `Input` instantiates `useInput` hook, which handles value updates and validation. `useInput` hook returns `onChange, valid, invalidMsg`. 
 
-• `valid:Boolean` - current input's value validation status<br/>
+• `valid:Boolean` - current validation status<br/>
 • `inValidMsg` - conditionally renders red message below the input if `valid === false`.<br/>
 • `onChange:Function` - updates `Input` state with `e.target.value`. If `type==='checkbox'` toggles state `true | false`
 
 --
 
-`useEffect` in `useInput` observes `value` and `valid` changes and updates corresponding `value` and `valid` in `FormContext`. When `value` is empty, resets `value` and `valid` to `null`. This prevents displaying validation message render when input has no value. Runs validation with 700ms delay, to let a user finish typing. Deleay reset on every keypress to prevent timeout bubbling.
+`useEffect` in `useInput` observes `value` and `valid` changes and updates corresponding `value` and `valid` in `FormContext`. When `value` is empty, resets `value` and `valid` to `null`. This prevents displaying validation message render when input has no value. Validation runs with 700ms delay, to let a user finish typing. Deleay resets on every keypress to prevent timeout bubbling.
 
 --
 
@@ -36,7 +36,7 @@ When all inputs (values) are valid, `useEffect` in `FormContext` sets `allValid`
 
 --
 
-On `Form` submit all values are logged to the console.
+On `Form` submit all values are logged to the console (sent to the server).
 
 ### Validation
 `RegEx.test()` used to validate following values `businessName, email, password, username`.
@@ -93,10 +93,10 @@ All files then imported to `index.scss` which compiles to `index.css`.
 For hi-res screens compatibility `@media` reassigns font-size value at root `html` element at `2400px and 3800px`
 
 
-### P.S.
-There are a couple of things I did differently, that can be easily changed if needed:
-- button initial color is gray, once all fields valid it's blue as in design file
-- Simplr logo on resolutons < 560px is on top of the form.
-- on resolutions < 560px paddings and margins are different
+### Final Notes
+
+- button's initial color is gray, once all fields valid it's blue as in the design file.
+- Simplr logo on resolutons < 560px is on top of the form (mobiles).
+- on resolutions < 560px paddings and margins are different (mobiles).
 - on resulutions > 560px form size is fixed to match design file.
-- using div wrappers is avoided when possible which resulted in more complex css
+- using div wrappers is avoided when possible, `React.Fragment` used instead.

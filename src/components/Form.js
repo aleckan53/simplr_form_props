@@ -23,10 +23,10 @@ const Form = () => {
         <Input label='Website' id='website' optional hint='(Optional)'/>
         <Select label='Type of Business' id='businessType' optional/>
         <Input label='Terms of Service' id='terms' type='checkbox'>
-          <p className='checkBoxDescription'>I have read and I do accept <a href='www.google.com'>terms of services</a></p>
+          <p className='checkBoxDescription'>I have read and I do accept <a href='/'>terms of services</a></p>
         </Input>
         <Input label='Privacy Policy' id='policy' type='checkbox'>
-          <p className='checkBoxDescription'>I have read and I do accept <a href='www.google.com'>privacy policy</a></p>
+          <p className='checkBoxDescription'>I have read and I do accept <a href='/'>privacy policy</a></p>
         </Input>
         <Button name='Register' type='submit' disabled={!allValid}/>
       </fieldset>
