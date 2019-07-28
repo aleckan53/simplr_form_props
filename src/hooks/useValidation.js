@@ -1,23 +1,40 @@
 import { useState } from 'react';
 import validate from 'utils/validation';
 
-const useValidation = () => {
+const useValidation = (inputType) => {
 
   const [valid, setValid] = useState(null);
   const [delay, setDelay] = useState(null);
   const [msg, setMsg] = useState(null);
 
   const checkValidation = (id, val) => {
-    if(id in validate) {
+    if(!val) {  // resets state if no value
+      setValid(null);
+      setMsg(null);
+      return;
+    }
+
+    if(inputType === 'checkbox') { // toggles valid for checkboxes
+      setValid(!valid);
+      return;
+    } 
+    
+    if(id in validate) {  // runs validation with delay, if validation fn exists
+      const { isValid, msg } = validate[id](val);
       clearTimeout(delay);
-      setDelay(setTimeout(() => {
-        const { isValid, msg } = validate[id](val);
+
+      if(isValid) { // if valid updates state with no delay
         setValid(isValid);
         setMsg(msg);
-      }, 700))
-    } else {
+      } else { // delays check when user typing
+        setDelay(setTimeout(() => {
+          setValid(isValid);
+          setMsg(msg);
+        }, 700));  
+      }
+    } else { // sets valid = true for optional inputs
       setValid(true);
-    }    
+    }
   };
 
   return {
