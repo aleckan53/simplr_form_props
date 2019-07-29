@@ -8,7 +8,6 @@
   }
 
   &[data-valid='false']:not(.checkbox) {
-    border: 1px solid green;
     @include outline(red);
   }
 

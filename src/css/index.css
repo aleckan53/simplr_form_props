@@ -146,7 +146,6 @@ input:-webkit-autofill:active {
 }
 
 .input[data-valid='false']:not(.checkbox) {
-  border: 1px solid green;
   outline-color: red;
   outline-style: solid;
   outline-width: 1px;

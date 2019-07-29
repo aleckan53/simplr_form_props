@@ -14,8 +14,8 @@ const Input = ({ label, id, updateState, type='text', hint, addValidField, child
 
   return <>
     <label htmlFor={id} data-for={type}>{label} {hint && <span>{hint}</span>}</label> 
-    <input id={id} className={`input ${type}`} type='text' onChange={handleChange} data-valid={valid}/>
-    {!valid && <div className='invalidMsg'><p>{msg}</p></div>}
+    <input id={id} className={`input ${type}`} type={type} onChange={handleChange} data-valid={valid}/>
+    {(!valid && type !=='checkbox') && <div className='invalidMsg'><p>{msg}</p></div>}
     {children}
   </>
 };
