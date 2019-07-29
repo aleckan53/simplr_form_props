@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
-import useValidation from 'hooks/useValidation';
+import { useValidation } from 'hooks';
 
 const Input = ({ label, id, toggleValue, updateValue, type='text', hint, updateValid = () => {}, children }) => {
   const { valid, msg, checkValidation } = useValidation(type);

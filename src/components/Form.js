@@ -1,10 +1,8 @@
 import React from 'react';
 import { Input, Select, Button } from 'components';
-import useFormState from 'hooks/useFormState';
-import useAllValid from 'hooks/useAllValid';
+import { useFormState, useAllValid } from 'hooks';
 
 const Form = () => {
-
   const { values, valid, ...handlers } = useFormState();
   const { allValid } = useAllValid(valid);
 
