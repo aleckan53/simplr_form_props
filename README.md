@@ -1,6 +1,6 @@
 ## Simplr form 
 
-<a href='https://form-ehhlo2y3h.now.sh'>LIVE DEMO</a>
+<a href='https://formprops-j1vjzi1v7.now.sh'>LIVE DEMO</a>
 
 I made 2 versions of the exercise: 
 - data passed using props only (this page)
