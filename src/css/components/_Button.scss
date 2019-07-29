@@ -9,11 +9,9 @@
   border: none;
   background-color: $mainColor;
   cursor: pointer;
-  transition: background-color .5s;
 
   &:disabled {
     background-color: $lightGray;
     opacity: .8;
-    transition: background-color .5s;
   }
 }

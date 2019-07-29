@@ -13,6 +13,7 @@ const useFormState = () => {
   });
 
   const [valid, setValid] = useState({
+    businessName: false,
     email: false,
     password: false,
     username: false,
@@ -21,12 +22,12 @@ const useFormState = () => {
   });
 
   const updateValue = (id, val) => {
-    setValues({...values, [id]: val});
+    setValues({ ...values, [id]: val });
   };
 
   const toggleValue = (id) => {
-    setValues({...values, [id]: !values[id]})
-  }
+    setValues({ ...values, [id]: !values[id] });
+  };
 
   const updateValid = (field, isValid) => {
     setValid({ ...valid, [field]: isValid || false });

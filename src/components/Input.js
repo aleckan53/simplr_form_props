@@ -13,7 +13,7 @@ const Input = ({ label, id, toggleValue, updateValue, type='text', hint, updateV
     const val = e.target.value;
     checkValidation(id, val); // runs validation
 
-    if(type==='checkbox') {
+    if(type === 'checkbox') {
       toggleValue(id);        // toggles value in form's state if checkbox
     } else {
       updateValue(id, val);   // updates value in form's state

@@ -263,14 +263,10 @@ label[data-for='checkbox']:last-of-type {
   border: none;
   background-color: #44b1df;
   cursor: pointer;
-  -webkit-transition: background-color .5s;
-  transition: background-color .5s;
 }
 
 .btn:disabled {
   background-color: #6f6f6f;
   opacity: .8;
-  -webkit-transition: background-color .5s;
-  transition: background-color .5s;
 }
 /*# sourceMappingURL=index.css.map */

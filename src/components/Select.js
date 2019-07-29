@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Select = ({ label, id, updateState }) => {
+const Select = ({ label, id, updateValue }) => {
   // hardcoded options
   const options = ['Logistics', 'E-Commerce', 'Tech', 'Retail', 'Other'];
   
   const handleChange = e => {
     const val = e.target.value;
-    updateState(id, val);
+    updateValue(id, val);
   };
 
   return <>

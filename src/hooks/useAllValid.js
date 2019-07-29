@@ -5,8 +5,7 @@ const useAllValid = (allFields) => {
   const [allValid, setAllValid] = useState(false);
 
   useEffect(() => {
-    console.log(allFields)
-    setAllValid(!Object.values(allFields).includes(false))
+    setAllValid(!Object.values(allFields).includes(false));
   }, [allFields]);
 
   return {
