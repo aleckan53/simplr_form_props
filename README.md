@@ -4,20 +4,35 @@
 
 I made 2 versions of the exercise: 
 - data passed using props only (this page)
-- with global state using Context API (redux analog) <a href=''>REPO</a>
+- with global state using Context API (redux analog) <a href='https://github.com/aleckan53/simplr_form_context'>REPO</a>
 
 ### Screenshot
 <img src='./readme/screen.png'/>
 
 ### Data flow
 
+<img src='./readme/data_flow_props.jpeg'/>
 
+
+
+- `useAllValid` - Checks if all inputs are valid. Returns `allValid:Boolean` which disables/enables submit button.
+- `useFormState` keeps state of all inputs values and validation status. Returns `values:Object`, `valid:Object`, `handlers:Object`
+
+`handlers` object has 3 methods to manipulate `FormState`:
+- `updateValue(id, val)` - passed to inputs as onChange handler, updates values state
+- `updateValid(field, isValid)` - passed to inputs as onChange handler updates validation status
+- `toggleValue(id)` - passed to checkboxes, handles onChange
 
 --
 
 On `Form` submit all values are logged to the console (sent to the server).
 
 ### Validation
+`useValidation` hook runs in `Input` component handles validation. It returns: 
+- `isValid:Boolean` - current input's validation status
+- `msg:String` - validation hint
+- `checkValidation:Function` - function that takes `id` and `value` of the current input. `id` is used to call the right validation function from validation util <a href='https://github.com/aleckan53/simplr_form_props/blob/master/src/utils/validation.js'>validation.js</a>
+
 `RegEx.test()` used to validate following values `businessName, email, password, username`.
 For `password` value, function returns custom validation message according to requirements.
 - aaaaaa => Password should have one uppercase
