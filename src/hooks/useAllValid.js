@@ -1,28 +1,16 @@
 import { useState, useEffect } from 'react';
 
-const useAllValid = () => {
+const useAllValid = (allFields) => {
 
   const [allValid, setAllValid] = useState(false);
-  const [fields, setFields] = useState({
-    email: false,
-    password: false,
-    username: false,
-    terms: false,
-    policy: false,
-  });
 
   useEffect(() => {
-    if (!(Object.values(fields).includes(false))) {
-      setAllValid(true);
-    }
-  }, [fields]);
-
-  const addValidField = (id, field) => {
-    setFields({ ...fields, [id]: field });
-  };
+    console.log(allFields)
+    setAllValid(!Object.values(allFields).includes(false))
+  }, [allFields]);
 
   return {
-    addValidField, allValid
+    allValid
   };
 };
 

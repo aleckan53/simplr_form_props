@@ -1,23 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Input, Select, Button } from 'components';
 import useFormState from 'hooks/useFormState';
 import useAllValid from 'hooks/useAllValid';
 
 const Form = () => {
 
-  const { state, updateState } = useFormState();
-  const { allValid, addValidField } = useAllValid();
+  const { values, valid, ...handlers } = useFormState();
+  const { allValid } = useAllValid(valid);
 
   const onSubmit = e => {
     e.preventDefault();
-    // if(!allValid) {
-    //   return;
-    // }
-
-    console.log(state);
+    console.log(values);
+    console.log(allValid);
   };
-
-  const handlers = { updateState, addValidField };
 
   return (
     <form className='form' onSubmit={onSubmit}>
@@ -35,7 +30,7 @@ const Form = () => {
         <Input {...handlers} label='Privacy Policy' id='policy' type='checkbox'>
           <p className='checkBoxDescription'>I have read and I do accept <a href='/'>privacy policy</a></p>
         </Input>
-        <Button name='Register' type='submit'/>
+        <Button name='Register' type='submit' disabled={!allValid}/>
       </fieldset>
     </form>
   );

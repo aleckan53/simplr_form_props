@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useValidation from 'hooks/useValidation';
 
-const Input = ({ label, id, updateState, type='text', hint, addValidField, children }) => {
- 
-  const { valid, msg, checkValidation } = useValidation();
+const Input = ({ label, id, updateValue, type='text', hint, updateValid, children }) => {
+  const { valid, msg, checkValidation } = useValidation(type);
 
   const handleChange = e => {
-    const val = e.target.value;
-    updateState(id, val);     // updates form's state
+    const val = type === 'checkbox' ? '' : e.target.value;
     checkValidation(id, val); // runs validation
-    addValidField(id, valid); // updates valid in form
+    updateValue(id, val);     // updates form's state
   };
+
+  useEffect(() => {
+    updateValid(id, valid);
+  }, [valid])
 
   return <>
     <label htmlFor={id} data-for={type}>{label} {hint && <span>{hint}</span>}</label> 

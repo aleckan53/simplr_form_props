@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const useFormState = () => {
-  const [state, setState] = useState({
+  const [values, setValues] = useState({
     businessName: '',
     email: '',
     username: '',
@@ -12,16 +12,28 @@ const useFormState = () => {
     policy: false,
   });
 
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
+  const [valid, setValid] = useState({
+    email: false,
+    password: false,
+    username: false,
+    terms: false,
+    policy: false,
+  });
 
-  const updateState = (id, val) => {
-    setState({...state, [id]: val});
+  const updateValue = (id, val) => {
+    if(val) {
+      setValues({...values, [id]: val});
+    } else {
+      setValues({...values, [id]: !values[id]})
+    }
+  };
+
+  const updateValid = (field, isValid) => {
+    setValid({ ...valid, [field]: isValid });
   };
 
   return {
-    state, updateState,
+    values, valid, updateValue, updateValid,
   };
 };
 

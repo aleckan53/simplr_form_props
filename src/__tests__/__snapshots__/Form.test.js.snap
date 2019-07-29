@@ -13,7 +13,7 @@ exports[`Form matches snapshot 1`] = `
         data-for="text"
         for="businessName"
       >
-        Business name
+        Business Name
          
       </label>
       <input
@@ -27,16 +27,16 @@ exports[`Form matches snapshot 1`] = `
         <p />
       </div>
       <label
-        data-for="email"
+        data-for="text"
         for="email"
       >
-        Business email
+        Business Email
          
       </label>
       <input
-        class="input email"
+        class="input text"
         id="email"
-        type="email"
+        type="text"
       />
       <div
         class="invalidMsg"
@@ -160,7 +160,7 @@ exports[`Form matches snapshot 1`] = `
       >
         I have read and I do accept 
         <a
-          href="www.google.com"
+          href="/"
         >
           terms of services
         </a>
@@ -182,14 +182,13 @@ exports[`Form matches snapshot 1`] = `
       >
         I have read and I do accept 
         <a
-          href="www.google.com"
+          href="/"
         >
           privacy policy
         </a>
       </p>
       <button
         class="btn"
-        disabled=""
         type="submit"
       >
         Register

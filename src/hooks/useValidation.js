@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import validate from 'utils/validation';
 
 const useValidation = (inputType) => {
@@ -7,17 +7,21 @@ const useValidation = (inputType) => {
   const [delay, setDelay] = useState(null);
   const [msg, setMsg] = useState(null);
 
+  useEffect(() => {
+    console.log(valid)
+  }, [valid])
+
   const checkValidation = (id, val) => {
+    if(inputType === 'checkbox') { // toggles valid for checkboxes
+      setValid(!valid);
+      return;
+    } 
+
     if(!val) {  // resets state if no value
       setValid(null);
       setMsg(null);
       return;
     }
-
-    if(inputType === 'checkbox') { // toggles valid for checkboxes
-      setValid(!valid);
-      return;
-    } 
     
     if(id in validate) {  // runs validation with delay, if validation fn exists
       const { isValid, msg } = validate[id](val);
