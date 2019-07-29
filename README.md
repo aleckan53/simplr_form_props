@@ -13,7 +13,13 @@ I made 2 versions of the exercise:
 
 <img src='./readme/data_flow_props.jpeg'/>
 
+The following set of props passed to create a new Input: 
+- `label:String` - Label for input<br/>
+- `type:String` - Input type (text || email || password || checkbox)<br/>
+- `hint:String` - Hint inside `<label/>`<br/>
+- `id:String` - Identifier for `<input id={id}/>`, `<label htmlFor={id}/>`, validation function `validate[id]()`
 
+--
 
 - `useAllValid` - Checks if all inputs are valid. Returns `allValid:Boolean` which disables/enables submit button.
 - `useFormState` keeps state of all inputs values and validation status. Returns `values:Object`, `valid:Object`, `handlers:Object`
@@ -25,16 +31,16 @@ I made 2 versions of the exercise:
 
 --
 
-On `Form` submit all values are logged to the console (sent to the server).
+On submit all values are logged to the console (sent to the server).
 
 ### Validation
-`useValidation` hook runs in `Input` component handles validation. It returns: 
+`useValidation` hook in `Input` component handles validation. It returns: 
 - `isValid:Boolean` - current input's validation status
 - `msg:String` - validation hint
 - `checkValidation:Function` - function that takes `id` and `value` of the current input. `id` is used to call the right validation function from validation util <a href='https://github.com/aleckan53/simplr_form_props/blob/master/src/utils/validation.js'>validation.js</a>
 
 `RegEx.test()` used to validate following values `businessName, email, password, username`.
-For `password` value, function returns custom validation message according to requirements.
+For `password` value, function returns custom validation message according to the requirements.
 - aaaaaa => Password should have one uppercase
 - aaaaaA => Password should have one digit
 - AAAAA1 => Password should have on lowercase
@@ -48,7 +54,6 @@ src /
 |
 |_____components /
 |    |___Component.js
-|
 |_____css /
 |    |___index.scss
 |    |___index.css
@@ -59,13 +64,11 @@ src /
 |       |___mixins.scss
 |       |___variables.scss
 |       |___base.scss
-|
 |_____hooks /
 |    |___useHook.js
-|
-|_____utils
+|_____utils /
 |    |___util.js
-|_____tests
+|_____tests /
      |___Component.test.js
 ```
 
