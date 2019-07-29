@@ -45,5 +45,5 @@ export default {
       isValid: regex.test(str),
       msg: `Please enter a valid Business Name`,
     };
-  }
+  },
 };
