@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import useValidation from 'hooks/useValidation';
 
-const Input = ({ label, id, toggleValue, updateValue, type='text', hint, updateValid, children }) => {
+const Input = ({ label, id, toggleValue, updateValue, type='text', hint, updateValid = () => {}, children }) => {
   const { valid, msg, checkValidation } = useValidation(type);
 
   useEffect(() => {

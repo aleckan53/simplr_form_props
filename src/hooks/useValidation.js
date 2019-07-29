@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import validate from 'utils/validation';
 
 const useValidation = (inputType) => {
@@ -6,10 +6,6 @@ const useValidation = (inputType) => {
   const [valid, setValid] = useState(null);
   const [delay, setDelay] = useState(null);
   const [msg, setMsg] = useState(null);
-
-  useEffect(() => {
-    console.log(valid)
-  }, [valid])
 
   const checkValidation = (id, val) => {
     if(inputType === 'checkbox') { // toggles valid for checkboxes
