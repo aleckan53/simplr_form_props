@@ -32,12 +32,14 @@ html {
   }
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
+input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #f2f2f2 inset !important;
           box-shadow: 0 0 0 30px #f2f2f2 inset !important;
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+          box-shadow: 0 0 0 30px #fff inset !important;
 }
 
 .form {

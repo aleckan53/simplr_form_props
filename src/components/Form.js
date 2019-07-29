@@ -8,7 +8,7 @@ const Form = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log(values);
+    console.log(values); // POST to the server
   };
 
   return (

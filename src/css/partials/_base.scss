@@ -26,9 +26,12 @@ html {
   }
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
-  box-shadow: 0 0 0 30px $inputBg inset !important;
+input {
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 30px $inputBg inset !important;
+
+    &:focus {
+      box-shadow: 0 0 0 30px #fff inset !important;
+    }
+  }
 }
