@@ -1,7 +1,6 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React from 'react';
 import { Input, Select, Button } from 'components';
 import useFormState from 'hooks/useFormState';
-import useValidation from 'hooks/useValidation';
 import useAllValid from 'hooks/useAllValid';
 
 const Form = () => {
@@ -11,12 +10,11 @@ const Form = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log(`POST data to server`);
-    if(!allValid) {
+    if(allValid) {
+      console.log(`POST data to server`);
       return;
     }
   };
-
 
   return (
     <form className='form' onSubmit={onSubmit}>
@@ -24,6 +22,7 @@ const Form = () => {
       <legend>LET'S GET STARTED</legend>
         <Input label='Business Name' id='businessName' updateState={updateState} addValidField={addValidField}/>
         <Input label='Business Email' id='email' updateState={updateState} addValidField={addValidField}/>
+        <Input label='Business Email' id='email' />
         {/* <Input label='Business email' id='email' type='email'/>
         <Input label='Create a Username' id='username'/>
         <Input label='Password' id='password' type='password' hint='6 characters | 1 uppercase | 1 lowercase | 1 digit'/>

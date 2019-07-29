@@ -4,15 +4,15 @@ const useAllValid = () => {
 
   const [allValid, setAllValid] = useState(false);
   const [fields, setFields] = useState({
-    email: null,
-    password: null,
-    username: null,
-    terms: null,
-    policy: null,
+    email: false,
+    password: false,
+    username: false,
+    terms: false,
+    policy: false,
   });
 
   useEffect(() => {
-    if (!(false in Object.keys(fields))) {
+    if (!(Object.values(fields).includes(false))) {
       setAllValid(true);
     }
   }, [fields]);
