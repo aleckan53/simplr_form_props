@@ -6,7 +6,7 @@ I made 2 versions of the exercise:
 - data passed using props only (this page)
 - with global state using Context API (redux analog) <a href='https://github.com/aleckan53/simplr_form_context'>REPO</a>
 
-### Screenshot
+### Screenshotgit
 <img src='./readme/screen.png'/>
 
 ### Data flow
