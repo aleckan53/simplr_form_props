@@ -4,7 +4,9 @@
 
 I made 2 versions of the exercise: 
 - data passed using props only (this page)
-- with global state using Context API (redux analog) <a href='https://github.com/aleckan53/simplr_form_context'>REPO</a>
+- with global state using Context API (redux analog)
+
+I prefer this version, but if you'd like to check out how it's done using Context API, the link is at the bottom of this page.
 
 ### Screenshot
 <img src='./readme/screen.png'/>
@@ -95,3 +97,7 @@ For hi-res screens compatibility `@media` reassigns font-size value at root `htm
 - on resolutions < 560px paddings and margins are different (mobiles).
 - on resulutions > 560px form size is fixed to match design file.
 - using div wrappers is avoided when possible, `React.Fragment` used instead.
+
+
+Context version.
+<a href='https://github.com/aleckan53/simplr_form_context'>CONTEXT version</a>
