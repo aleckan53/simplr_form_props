@@ -1,18 +1,24 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import useValidation from 'hooks/useValidation';
 
-const Input = ({ label, id, updateValue, type='text', hint, updateValid, children }) => {
+const Input = ({ label, id, toggleValue, updateValue, type='text', hint, updateValid, children }) => {
   const { valid, msg, checkValidation } = useValidation(type);
 
-  const handleChange = e => {
-    const val = type === 'checkbox' ? '' : e.target.value;
-    checkValidation(id, val); // runs validation
-    updateValue(id, val);     // updates form's state
-  };
-
   useEffect(() => {
-    updateValid(id, valid);
-  }, [valid])
+    updateValid(id, valid);   // updates valid in form's state
+  }, [valid]);
+
+  const handleChange = e => {
+    const val = e.target.value;
+    checkValidation(id, val); // runs validation
+
+    if(type==='checkbox') {
+      toggleValue(id);        // toggles value in form's state if checkbox
+    } else {
+      updateValue(id, val);   // updates value in form's state
+    }    
+  };
 
   return <>
     <label htmlFor={id} data-for={type}>{label} {hint && <span>{hint}</span>}</label> 

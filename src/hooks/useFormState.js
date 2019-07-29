@@ -21,19 +21,19 @@ const useFormState = () => {
   });
 
   const updateValue = (id, val) => {
-    if(val) {
-      setValues({...values, [id]: val});
-    } else {
-      setValues({...values, [id]: !values[id]})
-    }
+    setValues({...values, [id]: val});
   };
 
+  const toggleValue = (id) => {
+    setValues({...values, [id]: !values[id]})
+  }
+
   const updateValid = (field, isValid) => {
-    setValid({ ...valid, [field]: isValid });
+    setValid({ ...valid, [field]: isValid || false });
   };
 
   return {
-    values, valid, updateValue, updateValid,
+    values, valid, updateValue, updateValid, toggleValue
   };
 };
 
