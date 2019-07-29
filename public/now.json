@@ -1,7 +1,7 @@
 {
   "version": 2,
   "alias": "simplr",
-  "name": "form",
+  "name": "form_props",
   "routes": [
       {
         "src": "^/static/(.*)",
