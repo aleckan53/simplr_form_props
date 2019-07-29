@@ -13,12 +13,13 @@ const useValidation = (inputType) => {
       return;
     } 
 
-    if(!val) {  // resets state if no value
-      setValid(null);
-      setMsg(null);
-      return;
-    }
-    
+    /* resets state if no value */
+    // if(!val) { 
+    //   setValid(null);
+    //   setMsg(null);
+    //   return;
+    // }
+
     if(id in validate) {  // runs validation with delay, if validation fn exists
       const { isValid, msg } = validate[id](val);
       clearTimeout(delay);
